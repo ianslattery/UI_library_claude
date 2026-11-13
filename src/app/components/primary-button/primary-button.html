@@ -1,9 +1,11 @@
-<button class="ui-primary-button" [attr.type]="type()" [disabled]="disabled()">
-  @if (icon() === 'leading' && iconSrc(); as src) {
-    <span class="ui-primary-button__icon" aria-hidden="true" [style.--icon-src]="'url(' + src + ')'"></span>
-  }
-  <span class="ui-primary-button__label">{{ label() }}</span>
-  @if (icon() === 'trailing' && iconSrc(); as src) {
-    <span class="ui-primary-button__icon" aria-hidden="true" [style.--icon-src]="'url(' + src + ')'"></span>
-  }
+<button matButton="filled" class="ui-primary-button" [attr.type]="type()" [disabled]="disabled()">
+  <span class="ui-primary-button__content">
+    @if (icon() === 'leading' && iconSrc(); as src) {
+      <span class="ui-primary-button__icon" aria-hidden="true" [style.--icon-src]="'url(' + src + ')'"></span>
+    }
+    <span class="ui-primary-button__label">{{ label() }}</span>
+    @if (icon() === 'trailing' && iconSrc(); as src) {
+      <span class="ui-primary-button__icon" aria-hidden="true" [style.--icon-src]="'url(' + src + ')'"></span>
+    }
+  </span>
 </button>

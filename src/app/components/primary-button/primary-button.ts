@@ -1,9 +1,11 @@
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
+import { MatButton } from '@angular/material/button';
 
 export type PrimaryButtonIcon = 'none' | 'leading' | 'trailing';
 
 @Component({
   selector: 'ui-primary-button',
+  imports: [MatButton],
   templateUrl: './primary-button.html',
   styleUrl: './primary-button.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
