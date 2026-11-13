@@ -75,3 +75,7 @@ export const DisabledLeadingIcon: Story = {
 export const DisabledTrailingIcon: Story = {
   args: { disabled: true, icon: 'trailing', label: 'Button' },
 };
+
+export const Loading: Story = {
+  args: { loading: true, loadingText: 'Loading' },
+};

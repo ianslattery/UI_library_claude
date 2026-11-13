@@ -1,9 +1,24 @@
-<button matButton="filled" class="ui-primary-button" [attr.type]="type()" [disabled]="disabled()">
+<button
+  matButton="filled"
+  class="ui-primary-button"
+  [class.is-loading]="loading()"
+  [attr.type]="type()"
+  [attr.aria-busy]="loading() ? 'true' : null"
+  [disabled]="disabled()"
+>
   <span class="ui-primary-button__content">
     @if (icon() === 'leading' && iconSrc(); as src) {
       <span class="ui-primary-button__icon" aria-hidden="true" [style.--icon-src]="'url(' + src + ')'"></span>
     }
-    <span class="ui-primary-button__label">{{ label() }}</span>
+    <span class="ui-primary-button__text">
+      <span class="ui-primary-button__label" [class.is-hidden]="loading()">{{ label() }}</span>
+      @if (loading()) {
+        <span class="ui-primary-button__loading" role="status">
+          <mat-progress-spinner class="ui-primary-button__spinner" mode="indeterminate" [diameter]="24" [strokeWidth]="2" />
+          <span>{{ loadingText() }}</span>
+        </span>
+      }
+    </span>
     @if (icon() === 'trailing' && iconSrc(); as src) {
       <span class="ui-primary-button__icon" aria-hidden="true" [style.--icon-src]="'url(' + src + ')'"></span>
     }

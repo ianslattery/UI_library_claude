@@ -18,6 +18,7 @@
   --mat-button-filled-focus-state-layer-opacity: 0;
   --mat-button-filled-disabled-state-layer-color: transparent;
   --mat-button-filled-ripple-color: transparent;
+  --mat-button-filled-progress-active-indicator-color: #ffffff;
 
   --colour-button-primary-hover: #00321c;
   --colour-button-primary-active: #003832;
@@ -49,6 +50,36 @@
   display: flex;
   align-items: center;
   height: 100%;
+  gap: var(--mat-button-filled-icon-spacing);
+}
+
+.ui-primary-button.is-loading {
+  pointer-events: none;
+}
+
+.ui-primary-button__spinner {
+  --mat-progress-spinner-active-indicator-color: var(--mat-button-filled-progress-active-indicator-color);
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.ui-primary-button__text {
+  display: inline-grid;
+}
+
+.ui-primary-button__text > * {
+  grid-area: 1 / 1;
+}
+
+.ui-primary-button__label.is-hidden {
+  visibility: hidden;
+}
+
+.ui-primary-button__loading {
+  display: inline-flex;
+  align-items: center;
+  justify-self: center;
   gap: var(--mat-button-filled-icon-spacing);
 }
 
