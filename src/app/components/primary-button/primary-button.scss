@@ -3,6 +3,8 @@
   --colour-button-primary-hover: #00321c;
   --colour-button-primary-active: #003832;
   --colour-button-primary-text: #ffffff;
+  --colour-button-primary-disabled: #f0f0f0;
+  --colour-button-primary-text-disabled: #b1b4b6;
   --colour-button-primary-border-focus: #0094fb;
   --space-button-y: 12px;
   --space-button-x: 16px;
@@ -45,6 +47,12 @@
 
   &:focus-visible {
     box-shadow: inset 0 0 0 2px var(--colour-button-primary-border-focus);
+  }
+
+  &:disabled {
+    background: var(--colour-button-primary-disabled);
+    color: var(--colour-button-primary-text-disabled);
+    cursor: not-allowed;
   }
 }
 
