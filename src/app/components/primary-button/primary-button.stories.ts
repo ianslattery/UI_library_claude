@@ -2,11 +2,37 @@ import type { Meta, StoryObj } from '@storybook/angular-vite';
 import { fn } from 'storybook/test';
 
 import { PrimaryButton } from './primary-button';
+import componentTemplate from './primary-button.html?raw';
+import componentStyles from './primary-button.scss?raw';
+import componentClass from './primary-button.ts?raw';
+
+const sourceDescription = `
+### Component class
+\`\`\`ts
+${componentClass}
+\`\`\`
+
+### Template
+\`\`\`html
+${componentTemplate}
+\`\`\`
+
+### Styles
+Angular Material tokens are set on \`:host\`. Remaining CSS handles hover, active, focus and icon colour.
+\`\`\`scss
+${componentStyles}
+\`\`\`
+`;
 
 const meta: Meta<PrimaryButton> = {
   title: 'Components/Primary Button',
   component: PrimaryButton,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: { component: sourceDescription },
+    },
+  },
   args: {
     label: 'Button',
     type: 'button',
