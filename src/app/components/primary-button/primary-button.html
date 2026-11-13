@@ -1,9 +1,9 @@
 <button class="ui-primary-button" [attr.type]="type()" [disabled]="disabled()">
   @if (icon() === 'leading' && iconSrc(); as src) {
-    <img class="ui-primary-button__icon" [src]="src" alt="" />
+    <span class="ui-primary-button__icon" aria-hidden="true" [style.--icon-src]="'url(' + src + ')'"></span>
   }
   <span class="ui-primary-button__label">{{ label() }}</span>
   @if (icon() === 'trailing' && iconSrc(); as src) {
-    <img class="ui-primary-button__icon" [src]="src" alt="" />
+    <span class="ui-primary-button__icon" aria-hidden="true" [style.--icon-src]="'url(' + src + ')'"></span>
   }
 </button>

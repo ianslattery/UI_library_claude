@@ -41,3 +41,11 @@ export const TrailingIcon: Story = {
 export const Disabled: Story = {
   args: { disabled: true },
 };
+
+export const DisabledLeadingIcon: Story = {
+  args: { disabled: true, icon: 'leading', label: 'Button' },
+};
+
+export const DisabledTrailingIcon: Story = {
+  args: { disabled: true, icon: 'trailing', label: 'Button' },
+};
